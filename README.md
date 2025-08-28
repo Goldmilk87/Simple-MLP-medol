@@ -20,6 +20,14 @@ $$\displaystyle \hat \theta = \arg\max_\theta \prod_{i=1}^{N}p(y_i|x_i;\theta)$$
 
 For example, linear regression, assumed the $y|x \backsim \text{Norm}(f(x;\theta), \sigma^2)$.
 
+And we define it as our likelihood function, $L(\theta)$. Minimizing the negative log-likelihood, which is usually called loss, is equal to maximizing the likelihood function. For example, the likelihood function for Regression is
+
+$$L(\theta) = \frac{1}{N} \sum_{i=1}^{N} r^2 = \frac{1}{N} \sum_{i=1}^{N} (y_i - f(x_i:\theta))^2$$
+
+In MLP, the structure of the function is
+
+
+
 
 
 
