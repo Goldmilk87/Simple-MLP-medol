@@ -24,7 +24,29 @@ And we define it as our likelihood function, $L(\theta)$. Minimizing the negativ
 
 $$L(\theta) = \frac{1}{N} \sum_{i=1}^{N} r^2 = \frac{1}{N} \sum_{i=1}^{N} (y_i - f(x_i:\theta))^2$$
 
-In MLP, the structure of the function is
+For a one-hidden-layer MLP with \(h\) hidden neurons, the structure is:
+
+$$
+z_1 = w_1 x + b_1, \quad 
+a_1 = f_{\text{act}}(z_1),
+$$
+
+$$
+\hat{y} = f(x;\theta) = w_2 a_1 + b_2.
+$$
+
+- $w_1 \in \mathbb{R}^{h \times d}, \; b_1 \in \mathbb{R}^h$  
+- $w_2 \in \mathbb{R}^{1 \times h}, \; b_2 \in \mathbb{R}$  
+- $f_{\text{act}}$ is a non-linear activation (e.g., ReLU, tanh).
+
+And the loss function is:
+
+$$
+\mathcal{L}(\theta) = \frac{1}{N}\sum_{i=1}^N \big(y_i - f(x_i;\theta)\big)^2,
+$$
+
+which is the **Mean Squared Error (MSE)**, which is also the same as linear regression. The initiative idea behind this is to minimize the difference between the predicted value $\hat y_i = f(x)$ and the true value of $y_i$.
+
 
 
 
