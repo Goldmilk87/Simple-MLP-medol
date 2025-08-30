@@ -35,8 +35,8 @@ $$
 \hat{y} = f(x;\theta) = w_2 a_1 + b_2.
 $$
 
-- $w_1 \in \mathbb{R}^{h \times d}, \; b_1 \in \mathbb{R}^h$  
-- $w_2 \in \mathbb{R}^{1 \times h}, \; b_2 \in \mathbb{R}$  
+- $w_1 \in \mathbb{R}^{h \times d}, b_1 \in \mathbb{R}^h$  
+- $w_2 \in \mathbb{R}^{1 \times h}, b_2 \in \mathbb{R}$  
 - $f_{\text{act}}$ is a non-linear activation (e.g., ReLU, tanh).
 
 And the loss function is:
