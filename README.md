@@ -45,7 +45,49 @@ $$
 \mathcal{L}(\theta) = \frac{1}{N}\sum_{i=1}^N \big(y_i - f(x_i;\theta)\big)^2,
 $$
 
-which is the **Mean Squared Error (MSE)**, which is also the same as linear regression. The initiative idea behind this is to minimize the difference between the predicted value $\hat y_i = f(x)$ and the true value of $y_i$.
+which is the **Mean Squared Error (MSE)**, also known as the same concept in linear regression. The initiative behind this idea is to minimize the difference between the predicted value $\hat {y} _ i = f(x)$ and the true value of $y_i$.
+
+To minimize the MSE, we use gradient descent on the loss function on the training set. 
+
+- For the output layer:
+
+$$
+\frac{\partial \mathcal{L}}{\partial w_2} 
+= \frac{1}{N} \sum_{i=1}^N r_i (a_{1,i})^\top,
+\qquad
+\frac{\partial \mathcal{L}}{\partial b_2} 
+= \frac{1}{N} \sum_{i=1}^N r_i
+$$
+
+- For the hidden layer :
+
+$$
+\delta_1 = (w_2^T R) \odot f'_{\text{act}}(Z)
+$$
+
+$$
+\frac{\partial \mathcal{L}}{\partial w_1} 
+= \frac{1}{N} \sum_{i=1}^N \delta_{1,i} x_i^\top,
+\qquad
+\frac{\partial \mathcal{L}}{\partial b_1} 
+= \frac{1}{N} \sum_{i=1}^N \delta_{1,i}
+$$
+
+These derivatives are used in gradient descent updates:
+
+$$
+\hat \theta_i = \theta_{i-1} - c \cdot \Delta \theta
+$$ 
+
+where c is the learning rate.
+
+After we have the $\hat \theta$, we have the $\hat f(x)$ which can predict a number.
+
+
+## Testing part
+
+
+
 
 
 
