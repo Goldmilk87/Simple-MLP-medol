@@ -94,7 +94,8 @@ For a given function, $y_i = x_1(x_2 +x_3)$, the result for training set is:
 For the testing set is:
 <img width="1096" height="795" alt="image" src="https://github.com/user-attachments/assets/6c434e94-cd28-4cca-95f2-e192920d4129" />
 
-midNeuron = 10 is chosen to have the result.
+*midNeuron = 10 is chosen to have the result.
+*$x1, x2, x3$ are normalized 
 
 
 
