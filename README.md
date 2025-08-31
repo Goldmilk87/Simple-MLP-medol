@@ -81,14 +81,17 @@ $$
 
 where c is the learning rate.
 
-After we have the $\hat \theta$, we have the $\hat f(x)$ which can predict a number.
+After we have the $\hat \theta$, we have the $\hat f(x)$, which can predict a number.
+## Reference
+Most of the above is from,
+Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep learning*. MIT Press. Retrieved from http://www.deeplearningbook.org
 
 
 ## Testing part
 For a given function, $y_i = x_1(x_2 +x_3)$, the result for training set is: 
 <img width="1161" height="781" alt="image" src="https://github.com/user-attachments/assets/cf613fec-5be8-4a46-bcad-14a8d93a2a3f" />
 
-For testing set is:
+For the testing set is:
 <img width="1096" height="795" alt="image" src="https://github.com/user-attachments/assets/6c434e94-cd28-4cca-95f2-e192920d4129" />
 
 midNeuron = 10 is chosen to have the result.
