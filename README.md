@@ -88,7 +88,7 @@ Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep learning*. MIT Press. 
 
 
 ## Testing part
-For a given function, $y_i = x_1(x_2 +x_3)$, the result for training set is: 
+For a given function, $y_i = \frac{x_1}{10}(x_2 +x_3)$, the result for training set is: 
 <img width="1161" height="781" alt="image" src="https://github.com/user-attachments/assets/cf613fec-5be8-4a46-bcad-14a8d93a2a3f" />
 
 For the testing set is:
