@@ -89,10 +89,12 @@ Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep learning*. MIT Press. 
 
 ## Testing part
 For a given function, $y_i = \frac{x_1}{10}(x_2 +x_3)$, the result for training set is: 
-<img width="1161" height="781" alt="image" src="https://github.com/user-attachments/assets/cf613fec-5be8-4a46-bcad-14a8d93a2a3f" />
+<img width="1062" height="795" alt="image" src="https://github.com/user-attachments/assets/870b7e12-5ce0-47c8-bce9-27a3cd24bd9f" />
+
 
 For the testing set is:
-<img width="1096" height="795" alt="image" src="https://github.com/user-attachments/assets/6c434e94-cd28-4cca-95f2-e192920d4129" />
+<img width="1087" height="790" alt="image" src="https://github.com/user-attachments/assets/a0a68cee-284d-480a-9eb9-1f4d871f4c60" />
+
 
 *midNeuron = 10 is chosen to have the result.
 *$x1, x2, x3$ are normalized 
