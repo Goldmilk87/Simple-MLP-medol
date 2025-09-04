@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-np.random.seed(1012)
+np.random.seed(1011)
 
 x1 = np.random.uniform(-20, 20, size=3000)
 x2 = np.random.uniform(-20, 20, size=3000)
@@ -37,7 +37,7 @@ for col in ["x1","x2","x3"]:
     test_df[col] = (test_df[col] - mean) / std
 
 inputDim = 3
-midNeurons = 10
+midNeurons = 12
 outputDim = 1
 
 w1 = np.random.randn(midNeurons, inputDim) * np.sqrt(2.0 / inputDim)
@@ -55,10 +55,15 @@ def predictor(df: pd.DataFrame, w1: np.ndarray, b1: np.ndarray, w2: np.ndarray, 
     return df
 
 
-def mse(df: pd.DataFrame, w1: np.ndarray,b1: np.ndarray, w2: np.ndarray, b2: np.ndarray):
+def lose(df: pd.DataFrame, w1: np.ndarray,b1: np.ndarray, w2: np.ndarray, b2: np.ndarray):
     predictor(df, w1, b1, w2, b2)
     diff = df["y_hat"] - df["y1"]
     return np.linalg.norm(diff)**2 / (2 * len(df))
+
+def mse(df: pd.DataFrame, w1: np.ndarray,b1: np.ndarray, w2: np.ndarray, b2: np.ndarray):
+    predictor(df, w1, b1, w2, b2)
+    diff = df["y_hat"] - df["y1"]
+    return np.mean((diff) ** 2)
 
 def Gradient(df: pd.DataFrame, w1: np.ndarray,b1: np.ndarray, w2: np.ndarray, b2: np.ndarray):
     X = df.iloc[:, :inputDim].to_numpy().T
@@ -75,7 +80,7 @@ def Gradient(df: pd.DataFrame, w1: np.ndarray,b1: np.ndarray, w2: np.ndarray, b2
 
 def gradientDescent(df: pd.DataFrame, loss, gradient,
                     w1: np.ndarray, b1: np.ndarray, w2: np.ndarray, b2: np.ndarray,
-                    learning_rate: float = 1e-2,
+                    learning_rate: float = 1e-3,
                     iterations: int = 10000,
                     threshold: float = 1e-5):
     last_w1, last_b1, last_w2, last_b2 = w1, b1, w2, b2
@@ -102,7 +107,7 @@ def gradientDescent(df: pd.DataFrame, loss, gradient,
 
 
 
-w1, b1, w2, b2 = gradientDescent(df, mse, Gradient, w1, b1, w2, b2)
+w1, b1, w2, b2 = gradientDescent(df, lose, Gradient, w1, b1, w2, b2)
 
 print("df: \n", predictor(df, w1, b1, w2, b2))
 print("Training mse:", mse(df, w1, b1, w2, b2))
